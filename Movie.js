@@ -40,5 +40,12 @@ class Movies {
         }
         return findMovie;
     }
-
+    deleteMovieByTitle(title) {
+        let targetIndex = this.Movies.findIndex((movie) => movie.title.toLowerCase() === title.toLowerCase())
+        if (targetIndex === -1) {
+            return false
+        } else {
+            this.Movies.splice(targetIndex , 1)
+        }
+    }
 }
